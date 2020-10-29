@@ -13,6 +13,7 @@ export default {
       return this.$store.state.count;
     },
   },
+
   methods: {
     addCount() {
       this.$store.commit('addCount');
