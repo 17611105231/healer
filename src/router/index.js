@@ -13,7 +13,18 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('../components/Home.vue')
+    component: () => import('../components/Home.vue'),
+    redirect: '/welcome',
+    children: [
+      {
+        path: '/welcome',
+        component: () => import('../components/Welcome.vue')
+      },
+      {
+        path: '/users',
+        component: () => import('../components/user/Users.vue')
+      }
+    ]
   }
 ]
 
@@ -22,7 +33,7 @@ const router = new VueRouter({
 })
 //挂载路由导航守卫
 router.beforeEach((to, from, next) => {
-  console.log(to)
+  // console.log(to)
   if (to.path === '/login') {
     next()
   } else {

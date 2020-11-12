@@ -72,7 +72,7 @@ export default {
         if (!valid) {
           return false
         } else {
-          const { data: res } = this.$http
+          const data = this.$http
             .post('login', this.loginForm)
             .then(response => {
               const res = response.data
