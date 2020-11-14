@@ -103,7 +103,7 @@ export default {
           })
         } else {
           this.menuList = res.data
-          console.log(this.menuList)
+          // console.log(this.menuList)
         }
       })
     },

@@ -3,7 +3,12 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {},
+  created() {
+    // console.log(this.$route)
+  }
+}
 </script>
 
 <style></style>
