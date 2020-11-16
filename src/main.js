@@ -8,7 +8,7 @@ import './assets/css/global.css'
 Vue.use(ElementUI)
 
 import axios from 'axios'
-axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
+axios.defaults.baseURL = 'http://www.ysqorz.top:8888/api/private/v1/'
 //通过axios请求拦截器添加token，保证拥有获取数据的权限
 axios.interceptors.request.use(config => {
   // 为请求头对象，添加token验证的Authorization
