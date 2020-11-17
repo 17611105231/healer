@@ -5,8 +5,9 @@ import router from './router'
 import ElementUI from 'element-ui'
 import './styles.scss'
 import './assets/css/global.css'
+import TreeTable from 'vue-table-with-tree-grid'
 Vue.use(ElementUI)
-
+Vue.component('tree-table', TreeTable)
 import axios from 'axios'
 axios.defaults.baseURL = 'http://www.ysqorz.top:8888/api/private/v1/'
 //通过axios请求拦截器添加token，保证拥有获取数据的权限
