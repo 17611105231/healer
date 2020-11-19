@@ -128,8 +128,8 @@
       width="50%"
     >
       <el-form :model="addCateForm" ref="editCateRef" label-width="100px">
-        <el-form-item label="分类名称" prop="cat_name">
-          <el-input v-model="addCateForm.cat_name"></el-input>
+        <el-form-item label="分类名称">
+          <el-input v-model="editInfo.cat_name"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -205,8 +205,11 @@ export default {
       selectedKeys: [],
       //控制编辑分类对话框的显示与隐藏
       editCateDialogVisible: false,
-      //编辑提交确定是需要的参数
-      cat_id: 0
+      //编辑分类信息
+      editInfo: {
+        cat_name: '',
+        cat_id: 0
+      }
     }
   },
   created() {
@@ -299,14 +302,17 @@ export default {
     //点击编辑按钮弹出编辑分类对话框
     editCate(cate) {
       this.editCateDialogVisible = true
-      this.cat_id = cate.cat_id
-      this.addCateForm.cat_name = cate.cat_name
+      this.editInfo.cat_id = cate.cat_id
+      this.editInfo.cat_name = cate.cat_name
     },
     //点击按钮确提交编辑分类的信息
     async editCateConfirm() {
-      const { data: res } = await this.$http.put(`categories/${this.cat_id}`, {
-        cat_name: this.addCateForm.cat_name
-      })
+      const { data: res } = await this.$http.put(
+        `categories/${this.editInfo.cat_id}`,
+        {
+          cat_name: this.editInfo.cat_name
+        }
+      )
       if (res.meta.status !== 200)
         return this.$message.error('更新分类信息失败')
       this.$message.success('更新分类信息成功')
