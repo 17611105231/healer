@@ -3,7 +3,7 @@
     <div class="login_box">
       <!-- 头像区域 -->
       <div class="avtar_box">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/home-logo.png" alt="" />
       </div>
       <!-- 登陆表单区域 -->
       <el-form
@@ -101,6 +101,8 @@ export default {
 .login_container {
   background-color: #2b4b6b;
   height: 100%;
+  background: url('../assets/wallhaven-13mk9v.jpg');
+  background-size: 100% 100%;
 }
 .login_box {
   width: 450px;
@@ -111,6 +113,7 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
   .avtar_box {
     height: 130px;
     width: 130px;
